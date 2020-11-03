@@ -1,0 +1,56 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h2>Filterable Table</h2>
+  <p>Type something in the input field to search for any data in the table (table contains {{quantity}} events):</p>
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>
+
+     <br>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>League name</th>
+            <th>League country</th>
+            <th>League logo</th>
+            <th>Event date</th>
+            <th>Event hour</th>
+            <th>Event round</th>
+            <th>Event status</th>
+            <th>Event venue</th>
+            <th>Home team name</th>
+            <th>Home team logo</th>
+            <th>Goals home team</th>
+            <th>Away team name</th>
+            <th>Away team logo</th>
+            <th>Goals away team</th>
+          </tr>
+         </thead>
+
+          {% for event in past_events %}
+
+            <tbody id="myTable">
+              <tr>
+                <td>{{ event.league_name }}</td>
+                <td>{{ event.league_country }}</td>
+                <td><img src={{ event.league_logo }} width="50" height="54" title="League logo" alt="League logo"></td>
+                <td>{{ event.date }}</td>
+                <td>{{ event.hour }}</td>
+                <td>{{ event.round }}</td>
+                <td>{{ event.status }}</td>
+                <td>{{ event.venue }}</td>
+                <td>{{ event.home_team_name }}</td>
+                <td><img src={{ event.home_team_logo }} width="50" height="54" title="Home team logo" alt="Home team logo"></td>
+                <td>{{ event.goals_home_team }}</td>
+                <td>{{ event.away_team_name }}</td>
+                <td><img src={{ event.away_team_logo }} width="50" height="54" title="Away team logo" alt="Away team logo"></td>
+                <td>{{ event.goals_away_team }}</td>
+              </tr>
+
+          {% endfor %}
+      </table>
+    <p><a href="{% url 'events' %}">Previous page</a></p>
+</div>
+
+{% endblock %}

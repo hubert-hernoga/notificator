@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <form method="post"><br>
+      {% csrf_token %}
+        {% crispy form %}
+  </form><br>
+<a href="{% url 'home' %}">Previous page</a>
+{% endblock %}

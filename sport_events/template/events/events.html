@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><h4>There are {{quantity}} events in total.<br>Choose which you want to see:</h4><br>
+
+  <a href="{% url 'future_events' %}">Future events</a><br>
+  <a href="{% url 'ongoing_events' %}">Ongoing events</a><br>
+  <a href="{% url 'past_events' %}">Past events</a><br><br>
+  <a href="{% url 'home' %}">Previous page</a>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="login-box col-md-3">
+        <div class="login-logo">
+            <h2>Backoffice - FP</h2>
+        </div>
+        <div class="card">
+            <form method="post" class="form-type">
+                {% csrf_token %}
+                <div class="card-body login-card-body">
+                    <p class="login-box-msg">Log in</p>
+
+                        {{ form|crispy }}
+
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-default btn-block">Log in</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

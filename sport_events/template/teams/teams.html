@@ -1,0 +1,46 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+<div class="container">
+  <h2>Filterable Table</h2>
+  <p>Type something in the input field to search for any data in the table (table contains {{quantity}} teams):</p>
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>
+
+     <br>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Logo</th>
+            <th>Country</th>
+            <th>National</th>
+            <th>Venue name</th>
+            <th>Venue surface</th>
+            <th>Venue address</th>
+            <th>Venue city</th>
+            <th>Venue capacity</th>
+          </tr>
+         </thead>
+
+          {% for team in teams %}
+
+            <tbody id="myTable">
+              <tr>
+                <td>{{ team.name }}</td>
+                <td><img src={{ team.logo }} width="50" height="54" title="Team logo" alt="Team logo"></td>
+                <td>{{ team.country }}</td>
+                <td>{{ team.is_national }}</td>
+                <td>{{ team.venue_name }}</td>
+                <td>{{ team.venue_surface }}</td>
+                <td>{{ team.venue_address }}</td>
+                <td>{{ team.venue_city }}</td>
+                <td>{{ team.venue_capacity }}</td>
+              </tr>
+
+          {% endfor %}
+      </table>
+    <p><a href="{% url 'home' %}">Previous page</a></p>
+</div>
+
+{% endblock %}
