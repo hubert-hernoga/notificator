@@ -26,7 +26,7 @@ For simplicity, users can view 3 types of events and filter them:
 3. If you are logged in you can move from homepage to notifications (and register the choosen one) or go to check future, past or ongoing events (you can see the results of the matches played LIVE!))
 
 # Usage
-###Installation
+### Installation
 
 Create a virtual environment to install dependencies in and activate it:
 
@@ -42,7 +42,7 @@ Once pip has finished downloading the dependencies:
 
     (env)$ cd sport_events
 
-###Database
+### Database
 Change the default DATABASES in setting.py:
 
     DATABASES = {
@@ -60,13 +60,13 @@ Migrate database structure
 
     (env)$ python manage.py migrate
     
-###Start Django
+### Start Django
     
     (env)$ python manage.py runserver
     
 And navigate to `http://127.0.0.1:8000`
 
-###Cron management
+### Cron management
 Activate crons - you can find all of them in the CRONTAB section in settings.py - 
 after activating crons, all users will receive notifications of their choice in a timely manner
 
@@ -99,7 +99,7 @@ API [documentation](https://app.swaggerhub.com/apis/hubert-hernoga/Notificator/1
 * You can choose a notification depending on the frequency - Weekly / Daily / Live
 * After successfully saving the notification, we get a confirmation email (only when selecting the notification by email)
 
-##Main libraries used
+## Main libraries used
 * Crispy forms - is an application that helps to manage Django forms,
 * Crontab - running crons in the background at the required frequency,
 * Sengrid - sending e-mail notifications and confirmations,
